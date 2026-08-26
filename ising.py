@@ -18,8 +18,8 @@ energias = []
 temperaturas = []
 magnetizacoes = []
 
-termalizacao = 5000
-amostras = 5000
+termalizacao = 500
+amostras = 500
 
 for x in range(n):
     spin.append([0] * n)

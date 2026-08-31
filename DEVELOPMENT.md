@@ -333,9 +333,15 @@ The magnetization should decrease as temperature increases, while the energy sho
 There are still several things that need to be investigated.
 
 Thermalization;
+
 Statistical Uncertainty;
+
 Correlation Between Samples;
+
 Heat Capacity;
+
 Magnetic Susceptibility;
+
 Critical Temperature;
+
 Larger Lattices;

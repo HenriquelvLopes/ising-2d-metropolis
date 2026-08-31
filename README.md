@@ -1,15 +1,14 @@
 # ising-2d-metropolis
-A computational study of the 2D Ising model using the Metropolis algorithm.
 
-2D Ising Model
+A computational study of the two-dimensional Ising model using the Metropolis algorithm.
 
-A computational simulation of the two-dimensional Ising model using the Metropolis algorithm.
+## About
 
 The project was developed as a study of statistical mechanics and computational physics, with the goal of exploring how microscopic spin interactions give rise to macroscopic quantities such as energy and magnetization.
 
 The simulation uses a square lattice with periodic boundary conditions and allows the user to specify the lattice size, coupling constant, and temperature interval.
 
-Physical Model
+## Physical Model
 
 The Ising model represents a system of interacting spins arranged on a lattice. Each spin can assume one of two possible values,
 
@@ -33,13 +32,13 @@ $\langle i,j\rangle$ indicates that the sum is performed over neighboring pairs.
 
 For $J>0$, neighboring spins tend to align, favoring ferromagnetic ordering.
 
-Periodic Boundary Conditions
+## Periodic Boundary Conditions
 
 Periodic boundary conditions are used so that spins at the edge of the lattice interact with spins on the opposite edge.
 
 This avoids treating the boundary as a special region and makes the lattice effectively behave as a surface with no physical edges.
 
-Metropolis Algorithm
+## Metropolis Algorithm
 
 The equilibrium configurations are sampled using the Metropolis algorithm.
 
@@ -79,11 +78,11 @@ $$
 
 This procedure allows the system to sample configurations according to the Boltzmann distribution.
 
-Quantities Measured
+## Quantities Measured
 
 For each temperature, the program calculates the average energy and magnetization.
 
-Energy
+### Energy
 
 The total energy of the lattice is
 
@@ -105,7 +104,7 @@ $$
 
 is the total number of spins.
 
-Magnetization
+### Magnetization
 
 The total magnetization is
 
@@ -121,43 +120,42 @@ $$
 
 The absolute value is used because, in a finite simulation, the entire system can spontaneously change from predominantly positive magnetization to predominantly negative magnetization. Without taking the absolute value, these transitions could artificially drive the average magnetization toward zero.
 
-Simulation Procedure
+## Simulation Procedure
 
 For every temperature in the chosen interval:
 
-The system is allowed to thermalize.
-Random spin-flip attempts are performed using the Metropolis algorithm.
-Measurements are collected over a number of samples.
-The average energy and absolute magnetization are calculated.
-The quantities are normalized by the total number of spins.
-The temperature is increased and the process is repeated.
+1. The system is allowed to thermalize.
+2. Random spin-flip attempts are performed using the Metropolis algorithm.
+3. Measurements are collected over a number of samples.
+4. The average energy and absolute magnetization are calculated.
+5. The quantities are normalized by the total number of spins.
+6. The temperature is increased and the process is repeated.
 
 The current implementation uses:
 
-200 temperature intervals;
-500 thermalization sweeps per temperature;
-500 measurement samples per temperature;
-$n^2$ Metropolis attempts per sweep.
+- 200 temperature intervals;
+- 500 thermalization sweeps per temperature;
+- 500 measurement samples per temperature;
+- $n^2$ Metropolis attempts per sweep.
 
 These parameters are currently fixed in the source code and may be made configurable in future versions.
 
-Results
+## Results
 
 The program generates two plots:
 
-Energy per spin as a function of temperature;
-Absolute magnetization per spin as a function of temperature.
+- Energy per spin as a function of temperature;
+- Absolute magnetization per spin as a function of temperature.
 
 For the ferromagnetic two-dimensional Ising model, the magnetization decreases as thermal fluctuations become increasingly important. Near the critical temperature, the system undergoes a transition between an ordered and a disordered regime.
 
-For the infinite two-dimensional square-lattice Ising model with zero external magnetic field and $J>0$, the exact critical temperature is
+For the infinite two-dimensional square-lattice Ising model with zeroexternal magnetic field and $J>0$, the exact critical temperature is
 
-For the infinite two-dimensional square-lattice Ising model with zero external magnetic field and $J>0$, the exact critical temperature is
-
-
-
-$$\frac{k_B T_c}{J}=\frac{2}{\ln(1+\sqrt{2})}\approx 2.269.$$
-
+$$
+\frac{k_B T_c}{J} =
+\frac{2}{\ln(1+\sqrt{2})}
+\approx 2.269.
+$$
 
 
 The simulation can therefore be used to investigate the behavior of the system near this critical region and to compare numerical results with the known analytical result.
@@ -172,44 +170,48 @@ Install Matplotlib using:
 ```bash
 pip install matplotlib
 ```
-Run the program from the terminal:
+## How to Run
 
 python ising.py
 
 The program will ask for:
 
-digite o tamanho da rede (n x n):
-digite o valor da constante (J):
-digite a temperatura inicial (Ti):
-digite a temperatura final (Tf):
+```text
+Digite o tamanho da rede (n x n):
+Digite o valor da constante (J):
+Digite a temperatura inicial (Ti):
+Digite a temperatura final (Tf):
+```
 
 For example:
 
+```text
 n = 20
 J = 1
 Ti = 1
 Tf = 4
+```
 
 The simulation will then calculate the equilibrium properties of the system over the chosen temperature interval.
 
-Current Scope
+## Current Scope
 
 This project is primarily a computational study of the Ising model and the Metropolis algorithm.
 
 The current implementation focuses on:
 
-the two-dimensional square lattice;
-nearest-neighbor interactions;
-periodic boundary conditions;
-Metropolis Monte Carlo sampling;
-energy measurement;
-magnetization measurement;
-temperature-dependent behavior.
+- the two-dimensional square lattice;
+- nearest-neighbor interactions;
+- periodic boundary conditions;
+- Metropolis Monte Carlo sampling;
+- energy measurement;
+- magnetization measurement;
+- temperature-dependent behavior.
 
 More advanced observables and numerical improvements are planned as the project develops.
 
 
-references: 
+## References
 
 - H. Moysés Nussenzveig, *Curso de Física Básica, Vol. 3:
   Eletromagnetismo*, Blucher.

@@ -345,3 +345,24 @@ Magnetic Susceptibility;
 Critical Temperature;
 
 Larger Lattices;
+
+
+
+
+## hypothesis:
+perhaps it would work to group several spins together, treating them like a single large matrix element—similar to how matrix multiplication is handled.
+However, I think the margin of error would increase significantly.
+But in terms of computational power, I’m almost certain it would be much more efficient.
+
+
+$$
+\begin{pmatrix}
++1 & +1 & | & -1 & -1 \\
++1 & +1 & | & +1 & -1 \\
+-- & -- & | & -- & -- \\
+-1 & +1 & | & -1 & -1 \\
+-1 & +1 & | & +1 & +1
+\end{pmatrix}
+$$
+
+

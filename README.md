@@ -177,10 +177,10 @@ python ising.py
 The program will ask for:
 
 ```text
-Digite o tamanho da rede (n x n):
-Digite o valor da constante (J):
-Digite a temperatura inicial (Ti):
-Digite a temperatura final (Tf):
+lattice size (n x n):
+constant value (J):
+initial temperature (Ti):
+final temperature (Tf):
 ```
 
 For example:

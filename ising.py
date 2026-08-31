@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 
 spin = []
 
-n = int(input("digite o tamanho da rede (n x n):"))
-j = float(input("digite o valor da constante (J):"))
+n = int(input("lattice size (n x n)"))
+j = float(input("constant value (J):"))
     
-Ti = float(input("digite a temperatura inicial (Ti):"))
-Tf = float(input("digite a temperatura final (Tf):"))
+Ti = float(input("initial temperature (Ti):"))
+Tf = float(input("final temperature (Tf)::"))
 passos = 200
 
 deltaT = (Tf - Ti) / passos
@@ -45,7 +45,7 @@ def lado(spin, x, y):
 
     return cima, baixo, esquerda, direita
 
-    ### soma de vizinhos adjacentes, ate os que ligam na outra borda. como se fosse um circulo 
+    ### soma de vizinhos adjacentes, ate os que ligam na outra borda. como se fosse um circulo ou rosquinha
 def energia_somada(spin, x, y, j):
     cima, baixo, esquerda, direita = lado(spin, x, y)
 
